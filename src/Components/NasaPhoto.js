@@ -1,7 +1,18 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const kf = keyframes`
+  100% {
+    opacity: 1;
+    transform: scale(1) rotateZ(0);
+  }
+`;
 
 const StyledPage = styled.div`
+  opacity: 0;
+  transform: scale(2) rotateZ(180deg);
+  animation: ${kf} 0.5s ease-in-out forwards;
+
   p {
     color: ${(pr) => pr.theme.color};
     font-size: 2rem;
